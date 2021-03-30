@@ -20,8 +20,16 @@ const NotFound = () => {
     }, 1000)
   }
 
+  const endRedirect = () => {
+    clearInterval()
+  }
+
   useEffect(() => {
     handleRedirect()
+
+    return function cleanup() {
+      endRedirect()
+    }
   }, [])
 
   return (
