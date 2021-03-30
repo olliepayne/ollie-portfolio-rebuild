@@ -1,3 +1,7 @@
+export const getStaticProps = async () => {
+  
+}
+
 const Portfolio = () => {
   return (
     <div className="page-card">

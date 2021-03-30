@@ -1,20 +1,23 @@
 {
   "categories": [
-    
+    "Professional", "Personal", "Coding Challeneges"
   ],
   "filterTags": [
-
+    "HTML", "CSS", "JavaScript", "React", "Next.js", "TypeScript", "MongoDB", "Authentication", "JWT"
   ],
   "entries": [
     {
-      "title": "",
-      "externalLinks": [
-        {
-          "deployment": "",
-          "github": ""
-        }
+      "title": "Rosetta Send",
+      "preview": "",
+      "description": "",
+      "links": [
+        { "deployment": "" },
+        { "github": "" }
       ],
-      "thumbnailURL": ""
-    },
+      "thumbnailURL": "",
+      "tags": [
+        "React", "Authentication", "JWT"
+      ]
+    }
   ]
 }
