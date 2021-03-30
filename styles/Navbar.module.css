@@ -4,6 +4,7 @@
   align-items: center;
   border-bottom: 1px rgb(232, 232, 232) solid;
   width: 70%;
+  margin: 0 auto;
 }
 
 .title:hover {
@@ -44,7 +45,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: salmon;
+  background-color: rgb(255, 172, 197);
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }

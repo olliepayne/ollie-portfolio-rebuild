@@ -18,9 +18,7 @@ a {
 }
 
 .page-card {
-  margin-top: 50px;
+  margin: 50px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-self: center;
   width: 95%;
 }
