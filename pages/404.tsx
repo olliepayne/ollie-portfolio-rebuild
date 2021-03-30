@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 const NotFound = () => {
   const router = useRouter()
-  
+
   const redirectDelay = 3
   const [countdown, setCountdown] = useState(redirectDelay)
 
   const handleRedirect = () => {
     let newVal = countdown
     setInterval(() => {
-      if(newVal === 1) {
+      if (newVal === 1) {
         router.push('/')
       }
 
@@ -25,10 +25,27 @@ const NotFound = () => {
   }, [])
 
   return (
-    <div>
-      <h1>No Ollie Here...</h1>
-      <h2>Go back to the <Link href="/"><a>Homepage</a></Link></h2>
-      <p>Redirecting in {countdown}...</p>
+    <div className="page-card">
+      <div className="content">
+        <style jsx>
+          {`
+          .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .home-link {
+            color: cornflowerblue;
+            font-weight: bold;
+            text-decoration: underline;
+          }
+        `}
+        </style>
+        <h1>No Ollie Here...</h1>
+        <p>Go back to the <Link href="/"><a className="home-link">Homepage</a></Link></p>
+        <p>Redirecting in {countdown}...</p>
+      </div>
     </div>
   )
 }

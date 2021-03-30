@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 1px rgb(232, 232, 232) solid;
+  width: 70%;
 }
 
 .title:hover {
@@ -27,12 +29,12 @@
   padding: 0;
   display: flex;
   justify-content: space-around;
-  width: 200px;
 }
 
 .navLink {
   position: relative;
   font-size: 1.2rem;
+  margin-right: 25px;
 }
 
 .navLink:before {
