@@ -17,9 +17,14 @@
         { "github": "" }
       ],
       "thumbnailURL": "",
-      "tags": [
-        "React", "Authentication", "JWT"
-      ]
+      "filters": {
+        "categories": [
+
+        ],
+        "tags": [
+          
+        ]
+      }
     }
   ]
 }
