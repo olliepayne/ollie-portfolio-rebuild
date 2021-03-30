@@ -3,13 +3,13 @@ import styles from '../styles/Navbar.module.css'
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <div className={styles.title}>
-        <h1>Ollie Payne</h1>
+        <Link href="/"><a><h1>Ollie Payne</h1></a></Link>
       </div>
-      <ul>
-        <Link href="/portfolio"><a>Portfolio</a></Link>
-        <Link href="/contact"><a>Contact</a></Link>
+      <ul className={styles.navLinksList}>
+        <Link href="/portfolio"><a className={styles.navLink}>Portfolio</a></Link>
+        <Link href="/contact"><a className={styles.navLink}>Contact</a></Link>
       </ul>
     </nav>
   )
