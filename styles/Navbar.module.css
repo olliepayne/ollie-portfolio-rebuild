@@ -31,9 +31,23 @@
 }
 
 .navLink {
+  position: relative;
   font-size: 1.2rem;
 }
 
-.navLink {
-  
+.navLink:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: salmon;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.navLink:hover:before  {
+  visibility: visible;
+  width: 100%;
 }
