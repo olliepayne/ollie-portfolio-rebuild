@@ -20,6 +20,7 @@ const EntryCard = () => {
 }
 
 const Portfolio = ({ filters, entries }) => {
+  const [formData, setFormData] = useState({ filter: "" })
   const [appliedFilters, setAppliedFilters] = useState([])
   const [filteredEntries, setFilteredEntries] = useState(entries)
 
@@ -30,18 +31,23 @@ const Portfolio = ({ filters, entries }) => {
       newFilters.forEach(filter => {
         if (entry.filters.categories.includes(filter) || entry.filters.tags.includes(filter)) return (isMatch = true)
       })
-      console.log(isMatch)
+
+      if(isMatch) return entry
     })
     console.log(entriesCopy)
+  }
+
+  const handleFormChange = e => {
+    const newData = Object.assign({}, formData)
+    newData[e.target.name] = e.target.value
+    setFormData(newData)
   }
 
   const applyFilter = e => {
     e.preventDefault()
 
-    // NEWDATA IS UNDEFINED
     const newData: string[] = appliedFilters.slice()
-    newData.push(e.target.value)
-    console.log(newData)
+    newData.push(formData.filter)
     setAppliedFilters(newData)
 
     filterContent(newData)
@@ -53,7 +59,7 @@ const Portfolio = ({ filters, entries }) => {
         <div className={styles.firstRow}>
           <h1>Portfolio</h1>
           <form className={styles.filterForm} onSubmit={applyFilter}>
-            <input className={styles.filterInput} name="filter" type="text" placeholder="Enter filter..." />
+            <input className={styles.filterInput} name="filter" type="text" placeholder="Enter filter..." onChange={handleFormChange} />
             <button className={styles.applyButton}>Apply</button>
           </form>
         </div>
