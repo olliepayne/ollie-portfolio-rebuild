@@ -94,6 +94,10 @@ const Portfolio = ({ filters, entries }) => {
     filterContent(newCategory, newTags)
   }
 
+  const handleDeleteTag = () => {
+    
+  }
+
   return (
     <div className="page-card">
       <div className={styles.content}>
