@@ -28,7 +28,7 @@ const FilterTag = (props) => {
 }
 
 const Portfolio = ({ filters, entries }) => {
-  const [formData, setFormData] = useState({ category: '', tag: '' })
+  const [formData, setFormData] = useState({ category: 'All', tag: '' })
   const [appliedCategory, setAppliedCategory] = useState("")
   const [appliedTags, setAppliedTags] = useState([])
   const [filteredEntries, setFilteredEntries] = useState(entries)
@@ -39,15 +39,28 @@ const Portfolio = ({ filters, entries }) => {
       let isMatch: boolean = false
 
       if (newCategory !== 'All') {
-        if (entry.filters.categories.includes(newCategory)) return isMatch = true
+        if (entry.filters.categories.includes(newCategory)) {
+          if(newTags.length > 0) {
+            newTags.forEach(tag => {
+              if (entry.filters.tags.includes(tag)) return isMatch = true
+            })
+          } else {
+            isMatch = true
+          }
+        }
+      } else {
+        if(newTags.length > 0) {
+          newTags.forEach(tag => {
+            if (entry.filters.tags.includes(tag)) return isMatch = true
+          })
+        } else {
+          isMatch = true
+        }
       }
-
-      newTags.forEach(tag => {
-        if (entry.filters.tags.includes(tag)) return isMatch = true
-      })
 
       if (isMatch) return entry
     })
+    console.log(entriesCopy)
     setFilteredEntries(entriesCopy)
   }
 
