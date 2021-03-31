@@ -34,7 +34,7 @@ const Portfolio = ({ filters, entries }) => {
 
       if(isMatch) return entry
     })
-    console.log(entriesCopy)
+    setFilteredEntries(entriesCopy)
   }
 
   const handleFormChange = e => {
