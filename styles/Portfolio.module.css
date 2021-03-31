@@ -30,6 +30,21 @@
   background-color: whitesmoke;
 }
 
-.tagList {
+.tagListContainer {
+  display: flex;
+  align-items: center;
+}
 
+.tagList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  /* align-items: center; */
+}
+
+.tagContainer {
+  border: 1px black solid;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
 }

@@ -19,10 +19,17 @@ const EntryCard = () => {
   )
 }
 
-const FilterTag = (props) => {
-  return (
-    <div>
+const Tag = (props) => {
+  const [showDelete, setShowDelete] = useState(false)
 
+  const handleShowDelete = () => {
+    setShowDelete(!showDelete)
+  }
+
+  return (
+    <div className={styles.tagContainer} onMouseEnter={handleShowDelete} onMouseLeave={handleShowDelete}>
+      {showDelete ? <button>X</button> : null}
+      <p>{props.tag}</p>
     </div>
   )
 }
@@ -109,11 +116,11 @@ const Portfolio = ({ filters, entries }) => {
               <button className={styles.applyButton}>Apply</button>
             </div>
           </form>
-          <div className={styles.tagList}>
-            <h4>Tags: </h4>
-            <ul>
+          <div className={styles.tagListContainer}>
+            <h4>Tags:</h4>
+            <ul className={styles.tagList}>
               {appliedTags.map(tag => (
-                <li key={tag}>{tag}</li>
+                <li><Tag tag={tag} /></li>
               ))}
             </ul>
           </div>
