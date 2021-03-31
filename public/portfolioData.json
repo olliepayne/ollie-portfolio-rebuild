@@ -9,6 +9,7 @@
   },
   "entries": [
     {
+      "id": 1,
       "title": "Rosetta Send",
       "preview": "",
       "description": "",
@@ -19,10 +20,10 @@
       "thumbnailURL": "",
       "filters": {
         "categories": [
-
+          
         ],
         "tags": [
-          
+          "React", "Authentication", "JWT"
         ]
       }
     }

@@ -1,0 +1,26 @@
+.firstRow {
+  display: flex;
+  align-items: center;
+}
+
+.filterForm {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 140px;
+}
+
+.filterInput {
+  width: 80px;
+}
+
+.applyButton {
+  background-color: white;
+  border: 1px solid black;
+  font-size: 0.8rem;
+}
+
+.applyButton:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
