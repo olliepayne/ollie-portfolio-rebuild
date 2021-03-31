@@ -19,20 +19,34 @@ const EntryCard = () => {
   )
 }
 
+const FilterTag = (props) => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
 const Portfolio = ({ filters, entries }) => {
-  const [formData, setFormData] = useState({ filter: "" })
-  const [appliedFilters, setAppliedFilters] = useState([])
+  const [formData, setFormData] = useState({ category: '', tag: '' })
+  const [appliedCategory, setAppliedCategory] = useState("")
+  const [appliedTags, setAppliedTags] = useState([])
   const [filteredEntries, setFilteredEntries] = useState(entries)
 
-  const filterContent = (newFilters: string[]) => {
+  const filterContent = (newCategory: string, newTags: string[]) => {
     let entriesCopy: typeof entries[] = entries.slice()
     entriesCopy = entriesCopy.filter(entry => {
       let isMatch: boolean = false
-      newFilters.forEach(filter => {
-        if (entry.filters.categories.includes(filter) || entry.filters.tags.includes(filter)) return (isMatch = true)
+
+      if (newCategory !== 'All') {
+        if (entry.filters.categories.includes(newCategory)) return isMatch = true
+      }
+
+      newTags.forEach(tag => {
+        if (entry.filters.tags.includes(tag)) return isMatch = true
       })
 
-      if(isMatch) return entry
+      if (isMatch) return entry
     })
     setFilteredEntries(entriesCopy)
   }
@@ -43,14 +57,19 @@ const Portfolio = ({ filters, entries }) => {
     setFormData(newData)
   }
 
-  const applyFilter = e => {
+  const applyFilters = e => {
     e.preventDefault()
 
-    const newData: string[] = appliedFilters.slice()
-    newData.push(formData.filter)
-    setAppliedFilters(newData)
+    const newCategory: string = formData.category
+    setAppliedCategory(newCategory)
 
-    filterContent(newData)
+    const newTags: string[] = appliedTags.slice()
+    if (formData.tag !== "") {
+      newTags.push(formData.tag)
+      setAppliedTags(newTags)
+    }
+
+    filterContent(newCategory, newTags)
   }
 
   return (
@@ -58,10 +77,31 @@ const Portfolio = ({ filters, entries }) => {
       <div className={styles.content}>
         <div className={styles.firstRow}>
           <h1>Portfolio</h1>
-          <form className={styles.filterForm} onSubmit={applyFilter}>
-            <input className={styles.filterInput} name="filter" type="text" placeholder="Enter filter..." onChange={handleFormChange} />
-            <button className={styles.applyButton}>Apply</button>
+          <form className={styles.filterForm} onSubmit={applyFilters}>
+            <div className={styles.filterFormEntry}>
+              <label>Category:</label>
+              <select onChange={handleFormChange}>
+                {filters.categories.map(category => (
+                  <option key={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+            <div className={styles.filterFormEntry}>
+              <label>Enter Tag:</label>
+              <input className={styles.filterInput} name="filter" type="text" onChange={handleFormChange} />
+            </div>
+            <div className={styles.filterFormEntry}>
+              <button className={styles.applyButton}>Apply</button>
+            </div>
           </form>
+          <div className={styles.tagList}>
+            <h4>Tags: </h4>
+            <ul>
+              {appliedTags.map(tag => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
+          </div>
         </div>
         <ul>
           {filteredEntries.map(entry => (

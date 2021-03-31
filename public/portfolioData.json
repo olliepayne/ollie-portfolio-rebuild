@@ -1,7 +1,7 @@
 {
   "filters": {
     "categories": [
-      "All", "Professional", "Personal", "Coding Challeneges"
+      "All", "Professional", "Personal", "Coding Challeneges", "General Assembly"
     ],
     "tags": [
       "HTML", "CSS", "JavaScript", "React", "Next.js", "TypeScript", "MongoDB", "Authentication", "JWT", "Express", "MERN", "Node"
@@ -20,10 +20,10 @@
       "thumbnailURL": "",
       "filters": {
         "categories": [
-          
+          "General Assembly"
         ],
         "tags": [
-          "React", "Authentication", "JWT"
+          "React", "Authentication", "JWT", "JavaScript", "CSS"
         ]
       }
     },
@@ -39,7 +39,7 @@
       "thumbnailURL": "",
       "filters": {
         "categories": [
-          
+          "General Assembly"
         ],
         "tags": [
           "Express", "Authentication", "JavaScript"
