@@ -34,13 +34,15 @@ const Portfolio = ({ filters, entries }) => {
   const [filteredEntries, setFilteredEntries] = useState(entries)
 
   const filterContent = (newCategory: string, newTags: string[]) => {
+    console.log(newCategory, newTags)
+
     let entriesCopy: typeof entries[] = entries.slice()
     entriesCopy = entriesCopy.filter(entry => {
       let isMatch: boolean = false
 
       if (newCategory !== 'All') {
         if (entry.filters.categories.includes(newCategory)) {
-          if(newTags.length > 0) {
+          if (newTags.length > 0) {
             newTags.forEach(tag => {
               if (entry.filters.tags.includes(tag)) return isMatch = true
             })
@@ -49,7 +51,7 @@ const Portfolio = ({ filters, entries }) => {
           }
         }
       } else {
-        if(newTags.length > 0) {
+        if (newTags.length > 0) {
           newTags.forEach(tag => {
             if (entry.filters.tags.includes(tag)) return isMatch = true
           })
@@ -93,7 +95,7 @@ const Portfolio = ({ filters, entries }) => {
           <form className={styles.filterForm} onSubmit={applyFilters}>
             <div className={styles.filterFormEntry}>
               <label>Category:</label>
-              <select onChange={handleFormChange}>
+              <select name="category" onChange={handleFormChange}>
                 {filters.categories.map(category => (
                   <option key={category}>{category}</option>
                 ))}
@@ -101,7 +103,7 @@ const Portfolio = ({ filters, entries }) => {
             </div>
             <div className={styles.filterFormEntry}>
               <label>Enter Tag:</label>
-              <input className={styles.filterInput} name="filter" type="text" onChange={handleFormChange} />
+              <input className={styles.filterInput} name="tag" type="text" onChange={handleFormChange} />
             </div>
             <div className={styles.filterFormEntry}>
               <button className={styles.applyButton}>Apply</button>
