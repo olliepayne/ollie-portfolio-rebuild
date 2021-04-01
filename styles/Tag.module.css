@@ -23,5 +23,5 @@
 .deleteTagBtn:hover {
   cursor: pointer;
   opacity: 50%;
-  transform: rotateZ(360deg)
+  transform: rotateZ(180deg)
 }

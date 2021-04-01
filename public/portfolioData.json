@@ -83,6 +83,25 @@
           "HTML", "CSS", "JavaScript"
         ]
       }
+    },
+    {
+      "id": 4,
+      "title": "JS Palindrome Checker",
+      "preview": "Common interview / Coding Challenge/",
+      "description": "",
+      "links": [
+        { "deployment": "" },
+        { "github": "" }
+      ],
+      "thumbnailURL": "",
+      "filters": {
+        "categories": [
+          "Coding Challeneges"
+        ],
+        "tags": [
+          "HTML", "CSS", "JavaScript"
+        ]
+      }
     }
   ]
 }

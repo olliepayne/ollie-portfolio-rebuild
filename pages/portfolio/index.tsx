@@ -87,8 +87,8 @@ const Portfolio = ({ filters, entries }) => {
             <div className={styles.filterFormEntry}>
               <label>Category:</label>
               <select name="category" onChange={handleFormChange}>
-                {filters.categories.map((category, index) => (
-                  <option key={category + index}>{category}</option>
+                {filters.categories.map(category => (
+                  <option key={category}>{category}</option>
                 ))}
               </select>
             </div>
@@ -96,8 +96,8 @@ const Portfolio = ({ filters, entries }) => {
               <label>Enter Tag:</label>
               <input className={styles.filterInput} list="tags" name="tag" type="text" onChange={handleFormChange} />
               <datalist id="tags">
-                  {filters.tags.map((tag, index) => (
-                    <option key={tag + index} value={tag} />
+                  {filters.tags.map(tag => (
+                    <option key={tag} value={tag} />
                   ))}
               </datalist>
             </div>
@@ -108,15 +108,15 @@ const Portfolio = ({ filters, entries }) => {
           <div className={styles.tagListContainer}>
             <h4>Tags:</h4>
             <ul className={styles.tagList}>
-              {appliedTags.map((tag, index) => (
-                <li key={tag + index}><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
+              {appliedTags.map(tag => (
+                <li key={tag}><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
               ))}
             </ul>
           </div>
         </div>
         <ul className={styles.entryCardList}>
-          {filteredEntries.map((entry, index) => (
-            <li key={entry.title + index}><EntryCard entry={entry} /></li>
+          {filteredEntries.map(entry => (
+            <li key={entry.id}><EntryCard entry={entry} /></li>
           ))}
         </ul>
       </div>
