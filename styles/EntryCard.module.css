@@ -1,24 +1,44 @@
-.entryCardContainer {
+.container {
   width: 150px;
   height: 150px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  position: relative;
+  padding: 5px 5px;
+  margin: 0 10px 20px 10px;
+}
+
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 5px;
-  margin: 0 10px 20px 10px;
-  transition: 0.6s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transition: all 0.6s;
 }
 
-.entryCardContainer:hover {
+.content:hover {
   transform: rotateY(180deg);
 }
 
-.entryCardContent {
-  display: flex;
+.frontContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  backface-visibility: hidden;
 }
 
-.entryCardContent > h4 {
+.backContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.title{
   text-align: center;
 }
