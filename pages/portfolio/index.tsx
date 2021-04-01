@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styles from '../../styles/Portfolio.module.css'
+import Tag from '../../components/Tag'
+import EntryCard from '../../components/EntryCard'
 import portfolioData from '../../public/portfolioData.json'
 
 export const getStaticProps = async () => {
@@ -9,35 +11,6 @@ export const getStaticProps = async () => {
       entries: portfolioData.entries
     }
   }
-}
-
-const EntryCard = (props) => {
-  const { entry } = props
-
-  return (
-    <div className={styles.entryCardContainer}>
-      <div className={styles.entryCardContent}>
-        <h4>{entry.title}</h4>
-      </div>
-    </div>
-  )
-}
-
-const Tag = (props) => {
-  const { tag, deleteTag } = props
-
-  const [showDelete, setShowDelete] = useState(false)
-
-  const handleShowDelete = () => {
-    setShowDelete(!showDelete)
-  }
-
-  return (
-    <div className={styles.tagContainer} onMouseEnter={handleShowDelete} onMouseLeave={handleShowDelete}>
-      {showDelete ? <button className={styles.deleteTagBtn} onClick={() => deleteTag(tag)}>X</button> : null}
-      <p>{tag}</p>
-    </div>
-  )
 }
 
 const Portfolio = ({ filters, entries }) => {
@@ -124,7 +97,12 @@ const Portfolio = ({ filters, entries }) => {
             </div>
             <div className={styles.filterFormEntry}>
               <label>Enter Tag:</label>
-              <input className={styles.filterInput} name="tag" type="text" onChange={handleFormChange} />
+              <input className={styles.filterInput} list="tags" name="tag" type="text" onChange={handleFormChange} />
+              <datalist id="tags">
+                  {filters.tags.map(tag => (
+                    <option key={tag} value={tag} />
+                  ))}
+              </datalist>
             </div>
             <div className={styles.filterFormEntry}>
               <button className={styles.applyButton}>Apply</button>

@@ -1,0 +1,17 @@
+.tagContainer {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  width: rem;
+}
+
+.deleteTagBtn {
+  background: none;
+  border: none;
+  margin-right: 5px;
+}
+
+.deleteTagBtn:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
