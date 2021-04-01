@@ -11,10 +11,14 @@ export const getStaticProps = async () => {
   }
 }
 
-const EntryCard = () => {
-  return (
-    <div>
+const EntryCard = (props) => {
+  const { entry } = props
 
+  return (
+    <div className={styles.entryCardContainer}>
+      <div className={styles.entryCardContent}>
+        <h4>{entry.title}</h4>
+      </div>
     </div>
   )
 }
@@ -130,14 +134,14 @@ const Portfolio = ({ filters, entries }) => {
             <h4>Tags:</h4>
             <ul className={styles.tagList}>
               {appliedTags.map(tag => (
-                <li><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
+                <li key={tag}><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
               ))}
             </ul>
           </div>
         </div>
-        <ul>
+        <ul className={styles.entryCardList}>
           {filteredEntries.map(entry => (
-            <li key={entry.id}>{entry.title}</li>
+            <li key={entry.id}><EntryCard entry={entry} /></li>
           ))}
         </ul>
       </div>

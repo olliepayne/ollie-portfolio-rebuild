@@ -10,7 +10,7 @@
   "entries": [
     {
       "id": 0,
-      "title": "Rosetta Send",
+      "title": "Connect 4",
       "preview": "",
       "description": "",
       "links": [
@@ -23,7 +23,7 @@
           "General Assembly"
         ],
         "tags": [
-          "React", "Authentication", "JWT", "JavaScript", "CSS"
+          "HTML", "CSS", "JavaScript"
         ]
       }
     },
@@ -43,6 +43,25 @@
         ],
         "tags": [
           "Express", "Authentication", "JavaScript"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Rosetta Send",
+      "preview": "",
+      "description": "",
+      "links": [
+        { "deployment": "" },
+        { "github": "" }
+      ],
+      "thumbnailURL": "",
+      "filters": {
+        "categories": [
+          "General Assembly"
+        ],
+        "tags": [
+          "React", "Authentication", "JWT", "JavaScript", "CSS"
         ]
       }
     }
