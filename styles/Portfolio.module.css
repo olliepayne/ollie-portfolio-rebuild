@@ -1,6 +1,6 @@
 .firstRow {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .filterFormEntry {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .filterInput {
@@ -33,6 +33,7 @@
 .tagListContainer {
   display: flex;
   align-items: center;
+  height: 2rem;
 }
 
 .tagList {
@@ -40,6 +41,7 @@
   padding: 0;
   display: flex;
   align-items: center;
+  overflow: scroll;
 }
 
 .entryCardList {

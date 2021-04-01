@@ -81,8 +81,8 @@ const Portfolio = ({ filters, entries }) => {
   return (
     <div className="page-card">
       <div className={styles.content}>
+        <h1>Portfolio</h1>
         <div className={styles.firstRow}>
-          <h1>Portfolio</h1>
           <form className={styles.filterForm} onSubmit={applyFilters}>
             <div className={styles.filterFormEntry}>
               <label>Category:</label>

@@ -8,6 +8,11 @@
   align-items: center;
   padding: 5px 5px;
   margin: 0 10px 20px 10px;
+  transition: 0.6s;
+}
+
+.entryCardContainer:hover {
+  transform: rotateY(180deg);
 }
 
 .entryCardContent {
