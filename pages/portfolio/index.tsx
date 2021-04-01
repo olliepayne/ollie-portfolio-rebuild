@@ -14,41 +14,38 @@ export const getStaticProps = async () => {
 }
 
 const Portfolio = ({ filters, entries }) => {
+  console.log(entries)
+
   const [formData, setFormData] = useState({ category: 'All', tag: '' })
   const [appliedCategory, setAppliedCategory] = useState("")
   const [appliedTags, setAppliedTags] = useState([])
   const [filteredEntries, setFilteredEntries] = useState(entries)
 
   const filterContent = (newCategory: string, newTags: string[]) => {
-    console.log(newCategory, newTags)
-
     let entriesCopy: typeof entries[] = entries.slice()
     entriesCopy = entriesCopy.filter(entry => {
-      let isMatch: boolean = false
+      let isMatch: boolean = true
 
       if (newCategory !== 'All') {
-        if (entry.filters.categories.includes(newCategory)) {
+        if (!entry.filters.categories.includes(newCategory)) {
+          isMatch = false
+        } else {
           if (newTags.length > 0) {
             newTags.forEach(tag => {
-              if (entry.filters.tags.includes(tag)) return isMatch = true
+              if (!entry.filters.tags.includes(tag)) return isMatch = false
             })
-          } else {
-            isMatch = true
           }
         }
       } else {
         if (newTags.length > 0) {
           newTags.forEach(tag => {
-            if (entry.filters.tags.includes(tag)) return isMatch = true
+            if (!entry.filters.tags.includes(tag)) return isMatch = false
           })
-        } else {
-          isMatch = true
         }
       }
 
       if (isMatch) return entry
     })
-    console.log(entriesCopy)
     setFilteredEntries(entriesCopy)
   }
 
@@ -90,8 +87,8 @@ const Portfolio = ({ filters, entries }) => {
             <div className={styles.filterFormEntry}>
               <label>Category:</label>
               <select name="category" onChange={handleFormChange}>
-                {filters.categories.map(category => (
-                  <option key={category}>{category}</option>
+                {filters.categories.map((category, index) => (
+                  <option key={category + index}>{category}</option>
                 ))}
               </select>
             </div>
@@ -99,8 +96,8 @@ const Portfolio = ({ filters, entries }) => {
               <label>Enter Tag:</label>
               <input className={styles.filterInput} list="tags" name="tag" type="text" onChange={handleFormChange} />
               <datalist id="tags">
-                  {filters.tags.map(tag => (
-                    <option key={tag} value={tag} />
+                  {filters.tags.map((tag, index) => (
+                    <option key={tag + index} value={tag} />
                   ))}
               </datalist>
             </div>
@@ -111,15 +108,15 @@ const Portfolio = ({ filters, entries }) => {
           <div className={styles.tagListContainer}>
             <h4>Tags:</h4>
             <ul className={styles.tagList}>
-              {appliedTags.map(tag => (
-                <li key={tag}><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
+              {appliedTags.map((tag, index) => (
+                <li key={tag + index}><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
               ))}
             </ul>
           </div>
         </div>
         <ul className={styles.entryCardList}>
-          {filteredEntries.map(entry => (
-            <li key={entry.id}><EntryCard entry={entry} /></li>
+          {filteredEntries.map((entry, index) => (
+            <li key={entry.title + index}><EntryCard entry={entry} /></li>
           ))}
         </ul>
       </div>

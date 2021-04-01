@@ -1,7 +1,7 @@
 {
   "filters": {
     "categories": [
-      "All", "Professional", "Personal", "Coding Challeneges", "General Assembly"
+      "All", "Professional", "Personal", "Coding Challeneges", "General Assembly", "Favorites"
     ],
     "tags": [
       "HTML", "CSS", "JavaScript", "React", "Next.js", "TypeScript", "MongoDB", "Authentication", "JWT", "Express", "MERN", "Node"
@@ -58,10 +58,29 @@
       "thumbnailURL": "",
       "filters": {
         "categories": [
-          "General Assembly"
+          "Favorites", "General Assembly"
         ],
         "tags": [
           "React", "Authentication", "JWT", "JavaScript", "CSS"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "JS Cave Generator",
+      "preview": "2D cave/level generation using Cellular Automaton.",
+      "description": "",
+      "links": [
+        { "deployment": "" },
+        { "github": "" }
+      ],
+      "thumbnailURL": "https://i.imgur.com/ov2oq6Q.png",
+      "filters": {
+        "categories": [
+          "Favorites", "Personal"
+        ],
+        "tags": [
+          "HTML", "CSS", "JavaScript"
         ]
       }
     }
