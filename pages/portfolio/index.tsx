@@ -28,7 +28,7 @@ const Tag = (props) => {
 
   return (
     <div className={styles.tagContainer} onMouseEnter={handleShowDelete} onMouseLeave={handleShowDelete}>
-      {showDelete ? <button>X</button> : null}
+      {showDelete ? <button onClick={() => props.deleteTag(props.tag)}>X</button> : null}
       <p>{props.tag}</p>
     </div>
   )
@@ -94,8 +94,12 @@ const Portfolio = ({ filters, entries }) => {
     filterContent(newCategory, newTags)
   }
 
-  const handleDeleteTag = () => {
-    
+  const handleDeleteTag = (tag) => {
+    const arrCopy = appliedTags.slice()
+    arrCopy.splice(arrCopy.indexOf(tag), 1)
+    setAppliedTags(arrCopy)
+
+    filterContent(appliedCategory, arrCopy)
   }
 
   return (
@@ -124,7 +128,7 @@ const Portfolio = ({ filters, entries }) => {
             <h4>Tags:</h4>
             <ul className={styles.tagList}>
               {appliedTags.map(tag => (
-                <li><Tag tag={tag} /></li>
+                <li><Tag tag={tag} deleteTag={handleDeleteTag} /></li>
               ))}
             </ul>
           </div>
