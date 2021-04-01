@@ -11,7 +11,7 @@
     {
       "id": 0,
       "title": "Connect 4",
-      "preview": "",
+      "preview": "Recreated the classic game Connect 4.",
       "description": "",
       "links": [
         { "deployment": "" },
@@ -30,7 +30,7 @@
     {
       "id": 1,
       "title": "Mesocycle Tracker",
-      "preview": "",
+      "preview": "Athletic periodization tracking. MEN stack, Google OAuth.",
       "description": "",
       "links": [
         { "deployment": "" },
@@ -42,14 +42,14 @@
           "General Assembly"
         ],
         "tags": [
-          "Express", "Authentication", "JavaScript"
+          "Express", "Authentication", "JavaScript", "Node", "MongoDB"
         ]
       }
     },
     {
       "id": 2,
       "title": "Rosetta Send",
-      "preview": "",
+      "preview": "Rock Climbing Route database. MERN stack, custom JWT auth.",
       "description": "",
       "links": [
         { "deployment": "" },
@@ -61,7 +61,7 @@
           "Favorites", "General Assembly"
         ],
         "tags": [
-          "React", "Authentication", "JWT", "JavaScript", "CSS"
+          "React", "Authentication", "JWT", "JavaScript", "CSS", "Node", "MongoDB", "MERN"
         ]
       }
     },
