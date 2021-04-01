@@ -20,6 +20,8 @@ const EntryCard = () => {
 }
 
 const Tag = (props) => {
+  const { tag, deleteTag } = props
+
   const [showDelete, setShowDelete] = useState(false)
 
   const handleShowDelete = () => {
@@ -28,8 +30,8 @@ const Tag = (props) => {
 
   return (
     <div className={styles.tagContainer} onMouseEnter={handleShowDelete} onMouseLeave={handleShowDelete}>
-      {showDelete ? <button onClick={() => props.deleteTag(props.tag)}>X</button> : null}
-      <p>{props.tag}</p>
+      {showDelete ? <button className={styles.deleteTagBtn} onClick={() => deleteTag(tag)}>X</button> : null}
+      <p>{tag}</p>
     </div>
   )
 }
