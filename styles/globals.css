@@ -17,7 +17,7 @@ a {
   box-sizing: border-box;
 }
 
-.page-card {
+.page-container {
   margin: 50px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 95%;

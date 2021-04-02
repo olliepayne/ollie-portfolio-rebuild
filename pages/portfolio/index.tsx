@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from '../../styles/Portfolio.module.css'
 import Tag from '../../components/Tag'
 import EntryCard from '../../components/EntryCard'
@@ -74,12 +75,12 @@ const Portfolio = ({ filters, entries }) => {
     const arrCopy = appliedTags.slice()
     arrCopy.splice(arrCopy.indexOf(tag), 1)
     setAppliedTags(arrCopy)
-
+    
     filterContent(appliedCategory, arrCopy)
   }
 
   return (
-    <div className="page-card">
+    <div className="page-container">
       <div className={styles.content}>
         <h1>Portfolio</h1>
         <div className={styles.firstRow}>
@@ -116,7 +117,7 @@ const Portfolio = ({ filters, entries }) => {
         </div>
         <ul className={styles.entryCardList}>
           {filteredEntries.map(entry => (
-            <li key={entry.id}><EntryCard entry={entry} /></li>
+            <li key={entry.id}><Link href={`/portfolio/${entry.id}`}><a><EntryCard entry={entry} /></a></Link></li>
           ))}
         </ul>
       </div>
