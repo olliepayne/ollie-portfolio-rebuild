@@ -1,0 +1,17 @@
+.content {
+  
+}
+
+.firstRow {
+  display: flex ;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.description {
+  width: 50%;
+}
+
+.thumbnail {
+  
+}

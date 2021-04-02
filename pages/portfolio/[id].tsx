@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import styles from '../../styles/PortfolioDetails.module.css'
 import portfolioData from '../../public/portfolioData.json'
 
 export const getStaticPaths = async() => {
@@ -27,8 +29,19 @@ export const getStaticProps = async (context) => {
 const Details = ({ entry }) => {
   return (
     <div className="page-container">
-      <h1>{entry.title}</h1>
-      
+      <div className={styles.content}>
+        <h1>{entry.title}</h1>
+        <div className={styles.firstRow}>
+          <p className={styles.description}>{entry.description}</p>
+          <Image className={styles.thumbnail} src={entry.thumbnailURL} width={320} height={180} />
+        </div>
+        <div className={styles.secondRow}>
+          <div className={styles.linksContainer}>
+            <a href={entry.links.deployment} target="blank">Deployment</a>
+            <a href={entry.links.github} target="blank">Github</a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -13,10 +13,10 @@
       "title": "Connect 4",
       "preview": "Recreated the classic game Connect 4.",
       "description": "",
-      "links": [
-        { "deployment": "" },
-        { "github": "" }
-      ],
+      "links": {
+        "deployment": "",
+        "github": ""
+      },
       "thumbnailURL": "",
       "filters": {
         "categories": [
@@ -32,10 +32,10 @@
       "title": "Mesocycle Tracker",
       "preview": "Athletic periodization tracking. MEN stack, Google OAuth.",
       "description": "",
-      "links": [
-        { "deployment": "" },
-        { "github": "" }
-      ],
+      "links": {
+        "deployment": "",
+        "github": ""
+      },
       "thumbnailURL": "",
       "filters": {
         "categories": [
@@ -50,12 +50,12 @@
       "id": 2,
       "title": "Rosetta Send",
       "preview": "Rock Climbing Route database. MERN stack, custom JWT auth.",
-      "description": "",
-      "links": [
-        { "deployment": "" },
-        { "github": "" }
-      ],
-      "thumbnailURL": "",
+      "description": "I built Rosetta Send as an homage to my love and pursuit of elite sport climbing. The app allows a user to add a route, of any name/type/grade/location, which can then be searched by anybody using the built in Route Finder. The user can also view their profile of submitted climbs, and delete their account if they choose to. It is a full CRUD, MERN stack application. I began building this during my time with General Assembly.",
+      "links": {
+        "deployment": "https://blooming-retreat-36750.herokuapp.com/",
+        "github": "https://github.com/olliepayne/rosetta-send"
+      },
+      "thumbnailURL": "https://i.imgur.com/hJNZWZp.png",
       "filters": {
         "categories": [
           "Favorites", "General Assembly"
@@ -70,10 +70,10 @@
       "title": "JS Cave Generator",
       "preview": "2D cave/level generation using Cellular Automaton.",
       "description": "",
-      "links": [
-        { "deployment": "" },
-        { "github": "" }
-      ],
+      "links": {
+        "deployment": "" ,
+        "github": ""
+      },
       "thumbnailURL": "https://i.imgur.com/ov2oq6Q.png",
       "filters": {
         "categories": [
@@ -89,10 +89,10 @@
       "title": "JS Palindrome Checker",
       "preview": "Common interview / Coding Challenge/",
       "description": "",
-      "links": [
-        { "deployment": "" },
-        { "github": "" }
-      ],
+      "links": {
+        "deployment": "",
+        "github": ""
+      },
       "thumbnailURL": "",
       "filters": {
         "categories": [
