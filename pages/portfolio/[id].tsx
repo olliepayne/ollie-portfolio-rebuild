@@ -32,13 +32,15 @@ const Details = ({ entry }) => {
       <div className={styles.content}>
         <h1>{entry.title}</h1>
         <div className={styles.firstRow}>
-          <p className={styles.description}>{entry.description}</p>
-          <Image className={styles.thumbnail} src={entry.thumbnailURL} width={320} height={180} />
-        </div>
-        <div className={styles.secondRow}>
-          <div className={styles.linksContainer}>
-            <a href={entry.links.deployment} target="blank">Deployment</a>
-            <a href={entry.links.github} target="blank">Github</a>
+          <div className={styles.block1}>
+            <p className={styles.description}>{entry.description}</p>
+            <div className={styles.linksContainer}>
+              <a className={styles.link} href={entry.links.deployment} target="blank">Deployment</a>
+              <a className={styles.link} href={entry.links.github} target="blank">Github</a>
+            </div>
+          </div>
+          <div className={styles.block2}>
+            <a href={entry.thumbnailURL} target="blank"><Image className={styles.thumbnail} src={entry.thumbnailURL} width={320} height={180} /></a>
           </div>
         </div>
       </div>

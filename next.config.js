@@ -1,7 +1,7 @@
 module.exports = {
   images: {
     domains: [
-      'i.imgur.com'
+      'i.imgur.com', 'github.com'
     ],
   },
 }

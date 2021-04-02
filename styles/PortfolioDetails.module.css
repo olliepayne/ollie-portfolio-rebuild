@@ -9,9 +9,29 @@
 }
 
 .description {
-  width: 50%;
+  
 }
 
 .thumbnail {
   
+}
+
+.block1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.block2 {
+  
+}
+
+.linksContainer {
+  display: flex;
+}
+
+.link {
+  color: cornflowerblue;
+  margin-right: 20px;
+  text-decoration: underline;
 }

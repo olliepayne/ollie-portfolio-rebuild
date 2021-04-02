@@ -12,12 +12,12 @@
       "id": 0,
       "title": "Connect 4",
       "preview": "Recreated the classic game Connect 4.",
-      "description": "",
+      "description": "My first project completed as part of the General Assembly SEI Remote course. I decided to stick to my original guns and build a game.",
       "links": {
-        "deployment": "",
-        "github": ""
+        "deployment": "https://opconnect4.surge.sh/",
+        "github": "https://github.com/olliepayne/connect-four"
       },
-      "thumbnailURL": "",
+      "thumbnailURL": "https://github.com/olliepayne/connect-four/raw/main/images/screenshot2.png",
       "filters": {
         "categories": [
           "General Assembly"
@@ -31,12 +31,12 @@
       "id": 1,
       "title": "Mesocycle Tracker",
       "preview": "Athletic periodization tracking. MEN stack, Google OAuth.",
-      "description": "",
+      "description": "Second project with General Assembly. I wanted to build something related to athletics.",
       "links": {
-        "deployment": "",
-        "github": ""
+        "deployment": "https://quiet-thicket-74088.herokuapp.com/",
+        "github": "https://github.com/olliepayne/mesocycle-tracker"
       },
-      "thumbnailURL": "",
+      "thumbnailURL": "'https://camo.githubusercontent.com/4ad8e2e4e325bc841cace1ad2d5af1281a13bda3b16928eb5233c3ff8b44203d/68747470733a2f2f692e696d6775722e636f6d2f625542353958572e706e67",
       "filters": {
         "categories": [
           "General Assembly"
@@ -69,10 +69,10 @@
       "id": 3,
       "title": "JS Cave Generator",
       "preview": "2D cave/level generation using Cellular Automaton.",
-      "description": "",
+      "description": "I used to play with cave generation back a few years ago when I developed games as a hobby. I decided to revive my love for RNG and algorithm by creating a 2D 'platformer style cave', using a basic level of Cellular Automaton. Would be cool to code a little man to jump around this sometime.",
       "links": {
-        "deployment": "" ,
-        "github": ""
+        "deployment": "http://op-js-cave-generator.surge.sh/" ,
+        "github": "https://github.com/olliepayne/js-cave-generator"
       },
       "thumbnailURL": "https://i.imgur.com/ov2oq6Q.png",
       "filters": {
