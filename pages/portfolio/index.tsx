@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../../styles/Portfolio.module.css'
 import Tag from '../../components/Tag'
@@ -88,6 +89,10 @@ const Portfolio = ({ filters, entries }) => {
 
   return (
     <div className="page-container">
+      <Head>
+        <title>Ollie Payne | Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <div className={styles.content}>
         <h1>Portfolio</h1>
         <div className={styles.firstRow}>
