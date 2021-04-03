@@ -69,9 +69,16 @@ const Portfolio = ({ filters, entries }) => {
     }
 
     filterContent(newCategory, newTags)
+
+    const clearInput = () => {
+      const newFormData = Object.assign({}, formData)
+      newFormData.tag = ''
+      setFormData(newFormData)
+    }
+    clearInput()
   }
 
-  const handleDeleteTag = (tag) => {
+  const handleDeleteTag = tag => {
     const arrCopy = appliedTags.slice()
     arrCopy.splice(arrCopy.indexOf(tag), 1)
     setAppliedTags(arrCopy)
@@ -95,7 +102,7 @@ const Portfolio = ({ filters, entries }) => {
             </div>
             <div className={styles.filterFormEntry}>
               <label>Enter Tag:</label>
-              <input className={styles.filterInput} list="tags" name="tag" type="text" onChange={handleFormChange} />
+              <input className={styles.filterInput} list="tags" name="tag" type="text" value={formData.tag} onChange={handleFormChange} />
               <datalist id="tags">
                   {filters.tags.map(tag => (
                     <option key={tag} value={tag} />

@@ -14,7 +14,7 @@ const Footer = () => {
           }
         `}
       </style>
-      <p>Made with Next.js, checkout the <a className="github-link" href="/https://github.com/olliepayne/ollie-portfolio-rebuild" target="blank">Github repo</a></p>
+      <p>Made with Next.js, checkout the <a className="github-link" href="https://github.com/olliepayne/ollie-portfolio-rebuild" target="blank">Github repo</a></p>
     </footer>
   )
 }
