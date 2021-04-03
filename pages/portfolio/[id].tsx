@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from '../../styles/PortfolioDetails.module.css'
 import portfolioData from '../../public/portfolioData.json'
 
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   const data = portfolioData.entries
 
   const paths = data.map(entry => {

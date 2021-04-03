@@ -29,25 +29,6 @@
     },
     {
       "id": 1,
-      "title": "Mesocycle Tracker",
-      "preview": "Athletic periodization tracking. MEN stack, Google OAuth.",
-      "description": "Second project with General Assembly. I wanted to build something related to athletics.",
-      "links": {
-        "deployment": "https://quiet-thicket-74088.herokuapp.com/",
-        "github": "https://github.com/olliepayne/mesocycle-tracker"
-      },
-      "thumbnailURL": "'https://camo.githubusercontent.com/4ad8e2e4e325bc841cace1ad2d5af1281a13bda3b16928eb5233c3ff8b44203d/68747470733a2f2f692e696d6775722e636f6d2f625542353958572e706e67",
-      "filters": {
-        "categories": [
-          "General Assembly"
-        ],
-        "tags": [
-          "Express", "Authentication", "JavaScript", "Node", "MongoDB"
-        ]
-      }
-    },
-    {
-      "id": 2,
       "title": "Rosetta Send",
       "preview": "Rock Climbing Route database. MERN stack, custom JWT auth.",
       "description": "I built Rosetta Send as an homage to my love and pursuit of elite sport climbing. The app allows a user to add a route, of any name/type/grade/location, which can then be searched by anybody using the built in Route Finder. The user can also view their profile of submitted climbs, and delete their account if they choose to. It is a full CRUD, MERN stack application. I began building this during my time with General Assembly.",
@@ -66,7 +47,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "JS Cave Generator",
       "preview": "2D cave/level generation using Cellular Automaton.",
       "description": "I used to play with cave generation back a few years ago when I developed games as a hobby. I decided to revive my love for RNG and algorithm by creating a 2D 'platformer style cave', using a basic level of Cellular Automaton. Would be cool to code a little man to jump around this sometime.",
@@ -85,15 +66,34 @@
       }
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "JS Palindrome Checker",
-      "preview": "Common interview / Coding Challenge/",
-      "description": "",
+      "preview": "Common interview / Coding Challenge",
+      "description": "Standard Palindrome checker, nothing fancy.",
       "links": {
-        "deployment": "",
-        "github": ""
+        "deployment": "http://op-js-palindrome-checker.surge.sh/",
+        "github": "https://github.com/olliepayne/js-palindrome-checker"
       },
-      "thumbnailURL": "",
+      "thumbnailURL": "https://i.imgur.com/hHhIT22.png",
+      "filters": {
+        "categories": [
+          "Coding Challeneges"
+        ],
+        "tags": [
+          "HTML", "CSS", "JavaScript"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "JS Fizz Buzz",
+      "preview": "Common interview / Coding Challenge",
+      "description": "Generic Fizz Buzz, can specify a range of numbers to check Fizz Buzz on.",
+      "links": {
+        "deployment": "http://op-js-fizz-buzz.surge.sh/",
+        "github": "https://github.com/olliepayne/js-fizz-buzz"
+      },
+      "thumbnailURL": "https://i.imgur.com/MshNx5M.png",
       "filters": {
         "categories": [
           "Coding Challeneges"
