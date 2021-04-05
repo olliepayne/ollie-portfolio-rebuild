@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px rgb(232, 232, 232) solid;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+}
+
+.navLinksList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navLink {
+  position: relative;
+  font-size: 1.2rem;
+  margin-right: 2.5rem;
+}
+
+.navLink:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 172, 197);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.navLink:hover:before  {
+  visibility: visible;
+  transform: scaleX(1);
+}
