@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/PortfolioDetails.module.css'
 import portfolioData from '../../public/portfolioData.json'
@@ -29,6 +30,9 @@ export const getStaticProps = async (context) => {
 const Details = ({ entry }) => {
   return (
     <div className="page-container">
+      <Head>
+        <title>Ollie Payne | {entry.title}</title>
+      </Head>
       <div className={styles.content}>
         <h1>{entry.title}</h1>
         <div className={styles.firstRow}>
