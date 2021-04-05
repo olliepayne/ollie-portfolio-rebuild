@@ -13,13 +13,13 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.top}>
-        <Link href="/"><a><h1>Ollie Payne Mobile</h1></a></Link>
-        <button onClick={handleOpen}>{isOpen ? '[collapse]' : '[expand]' }</button>
+        <Link href="/"><a className={styles.title}><h1>Ollie Payne Mobile</h1></a></Link>
+        <p className={styles.openBtn} onClick={handleOpen}>{isOpen ? '[collapse]' : '[expand]' }</p>
       </div>
       {isOpen &&
         <ul className={styles.navLinksList}>
-          <li><Link href="/portfolio"><a className={styles.navLink}>Portfolio</a></Link></li>
-          <li><Link href="/contact"><a className={styles.navLink}>Contact</a></Link></li>
+          <li className={styles.navListItem}><Link href="/portfolio"><a className={styles.navLink}>Portfolio</a></Link></li>
+          <li className={styles.navListItem}><Link href="/contact"><a className={styles.navLink}>Contact</a></Link></li>
         </ul>
       }
     </nav>

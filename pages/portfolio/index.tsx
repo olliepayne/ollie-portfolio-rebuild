@@ -65,8 +65,10 @@ const Portfolio = ({ filters, entries }) => {
 
     const newTags: string[] = appliedTags.slice()
     if (formData.tag !== "") {
-      newTags.push(formData.tag)
-      setAppliedTags(newTags)
+      if (!appliedTags.includes(formData.tag)) {
+        newTags.push(formData.tag)
+        setAppliedTags(newTags)
+      }
     }
 
     filterContent(newCategory, newTags)
