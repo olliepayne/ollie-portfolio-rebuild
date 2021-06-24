@@ -19,7 +19,9 @@ const AboutMeCard = () => {
 
 export default function Home() {
   const pageStyle = {
-
+    minHeight: '100vh',
+    marginTop: '80px',
+    flex: '1 auto'
   }
 
   const contentFilterStyle = {

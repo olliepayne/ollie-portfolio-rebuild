@@ -1,3 +1,15 @@
+/*
+  -------------------
+  |ContentFilter.tsx|
+  -------------------
+
+  Dependencies
+  - TypeScript (.tsx file extension)
+
+  Using
+*/
+
+/** @jsxImportSource theme-ui */
 import React, { useState } from 'react'
 
 type FormProps = { filters: { categories: string[], tags: string[] } }
@@ -16,7 +28,7 @@ const Form = ({ filters }: FormProps) => {
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>Category:</label>
       <select name="category">
         {filters.categories.map((category: string) => (
@@ -30,6 +42,12 @@ const Form = ({ filters }: FormProps) => {
           <option key={'form:' + tag} value={tag} />
         ))}
       </datalist>
+      <button
+        sx={{
+
+        }}>
+        Apply
+      </button>
     </form>
   )
 }
@@ -40,7 +58,7 @@ const ContentFilter = ({ filters, data, style }: ContentFilterProps) => {
   const [filteredData, setFilteredData] = useState<FilteredData>(data)
 
   const handleDataFilter = (data: any) => {
-    
+
   }
 
   return (

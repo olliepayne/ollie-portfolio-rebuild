@@ -1,24 +1,6 @@
 /** @jsxImportSource theme-ui */
 import Link from 'next/link'
 
-const NavHeader = () => {
-  return (
-    <div
-      sx={{
-        textAlign: 'center',
-      }}
-    >
-      <h1 
-        sx={{ 
-          fontSize: '2rem', 
-          color: 'secondary' 
-        }}>
-        Ollie Payne
-      </h1>
-    </div>
-  )
-}
-
 type NavLinkProps = { url: string, text: string }
 const NavLink = ({ url, text }: NavLinkProps) => {
   return (
@@ -55,15 +37,35 @@ const NavLinkList = () => {
   )
 }
 
+const NavHeader = () => {
+  return (
+    <div
+      sx={{
+        textAlign: 'center',
+      }}
+    >
+      <h1 
+        sx={{ 
+          fontSize: '2rem', 
+          color: 'white' 
+        }}>
+        Ollie Payne
+      </h1>
+    </div>
+  )
+}
+
 const Nav = () => {
   return (
     <nav
       sx={{
         maxHeight: '80px',
+        position: 'fixed',
+        inset: '0',
         display: 'flex',
         justifyContent: 'space-around',
         backgroundColor: 'secondary',
-        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)'
+        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)'
       }}>
       <NavHeader />
       <NavLinkList />
