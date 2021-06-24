@@ -26,10 +26,17 @@ const Search = ({ data, handleChange }: SearchProps) => {
 
   const handleResultFiltering = () => {
     const isValidResult = (result: string) => {
-      for (let i = 0; i < inputData.length; i++) {
-        if (inputData[i].toLowerCase() !== result[i].toLowerCase()) {
-          return false
+      const inputDataLower = inputData.toLowerCase()
+      const resultLower = result.toLowerCase()
+
+      if (inputData.length > 0) {
+        for (let i = 0; i < inputData.length; i++) {
+          if (inputDataLower[i] !== resultLower[i]) {
+            return false
+          }
         }
+      } else {
+        return false
       }
 
       return true
