@@ -5,15 +5,22 @@ const NavHeader = () => {
   return (
     <div
       sx={{
-        textAlign: 'center'
+        textAlign: 'center',
       }}
     >
-      <h1>Ollie Payne</h1>
+      <h1 
+        sx={{ 
+          fontSize: '2rem', 
+          color: 'secondary' 
+        }}>
+        Ollie Payne
+      </h1>
     </div>
   )
 }
 
-const NavLink = ({ targetUrl, text }) => {
+type NavLinkProps = { url: string, text: string }
+const NavLink = ({ url, text }: NavLinkProps) => {
   return (
     <div
       sx={{
@@ -21,14 +28,12 @@ const NavLink = ({ targetUrl, text }) => {
         padding: '0.5em',
         margin: '0 1em',
         ':hover': { cursor: 'pointer', backgroundColor: 'lightgray' }
-      }}
-    >
-      <Link href={targetUrl}>
+      }}>
+      <Link href={url}>
         <a
           sx={{
 
-          }}
-        >
+          }}>
           {text}
         </a>
       </Link>
@@ -43,10 +48,9 @@ const NavLinkList = () => {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center'
-      }}
-    >
-      <NavLink targetUrl="/portfolio" text="Portfolio" />
-      <NavLink targetUrl="/contact" text="Contact" />
+      }}>
+      <NavLink url="/portfolio" text="Portfolio" />
+      <NavLink url="/contact" text="Contact" />
     </div>
   )
 }
@@ -55,10 +59,12 @@ const Nav = () => {
   return (
     <nav
       sx={{
+        maxHeight: '80px',
         display: 'flex',
-        justifyContent: 'space-around'
-      }}
-    >
+        justifyContent: 'space-around',
+        backgroundColor: 'secondary',
+        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)'
+      }}>
       <NavHeader />
       <NavLinkList />
     </nav>

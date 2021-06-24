@@ -1,11 +1,12 @@
-import Layout from '../components/Layout'
-import '../styles/globals.css'
+import { ThemeProvider } from 'theme-ui'
+import theme from '../theme'
+// import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <ThemeProvider theme={theme}>
       <Component {...pageProps} />
-    </Layout>
+    </ThemeProvider>
   )
 }
 
