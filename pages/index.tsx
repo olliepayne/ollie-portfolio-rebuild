@@ -1,13 +1,14 @@
 /** @jsxImportSource theme-ui */
 import Layout from '../components/Layout'
 import PageContent from '../components/PageContent'
+import Card from '../components/Card'
 import ContentFilter from '../components/ContentFilter'
 
 const AboutMeCard = () => {
   return (
     <div
       sx={{
-        width: 'clamp(200px, 45%, 400px)',
+        width: 'clamp(300px, 45%, 500px)',
         padding: '1em',
         margin: '0 auto',
         backgroundColor: 'teal'
@@ -18,16 +19,6 @@ const AboutMeCard = () => {
 }
 
 export default function Home() {
-  const pageStyle = {
-    minHeight: '100vh',
-    marginTop: '80px',
-    flex: '1 auto'
-  }
-
-  const contentFilterStyle = {
-
-  }
-
   const filters = {
     categories: [
       'all'
@@ -54,9 +45,24 @@ export default function Home() {
 
   return (
    <Layout title="Ollie Payne - Home">
-     <PageContent style={pageStyle}>
-      <AboutMeCard />
-      <ContentFilter filters={filters} data={data} handleFilteredData={handleFilteredData} style={contentFilterStyle} />
+     <PageContent
+      style={{
+        minHeight: '100vh',
+        marginTop: '80px',
+        flex: '1 auto'
+      }}>
+      <Card
+        style={{
+          width: 'clamp(300px, 45%, 500px)',
+          padding: '1em',
+          margin: '0 auto',
+          backgroundColor: 'muted',
+          borderLeft: '5px solid hsl(350, 100%, 90%)'
+        }}
+      >
+        <p>Front-End Developer</p>
+      </Card>
+      <ContentFilter filters={filters} data={data} handleFilteredData={handleFilteredData} />
      </PageContent>
    </Layout>
   )

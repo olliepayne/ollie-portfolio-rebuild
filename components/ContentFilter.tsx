@@ -1,12 +1,14 @@
 /*
-  -------------------
-  |ContentFilter.tsx|
-  -------------------
+  ---------------
+  |ContentFilter|
+  ---------------
 
   Dependencies
   - TypeScript (.tsx file extension)
+  - Theme UI (sx prop for styling)
 
-  Using
+  To Use
+  - Use the 'handleFilteredData' prop to pass the data back up to the respective page.
 */
 
 /** @jsxImportSource theme-ui */
@@ -44,7 +46,9 @@ const Form = ({ filters }: FormProps) => {
       </datalist>
       <button
         sx={{
-
+          ':hover': {
+            cursor: 'pointer'
+          }
         }}>
         Apply
       </button>
@@ -52,17 +56,17 @@ const Form = ({ filters }: FormProps) => {
   )
 }
 
-type ContentFilterProps = { filters: { categories: string[], tags: string[] }, data: any, handleFilteredData: (data: any) => void, style: any }
-const ContentFilter = ({ filters, data, style }: ContentFilterProps) => {
+type ContentFilterProps = { filters: { categories: string[], tags: string[] }, data: any, handleFilteredData: (data: any) => void }
+const ContentFilter = ({ filters, data }: ContentFilterProps) => {
   type FilteredData = { data: any }
   const [filteredData, setFilteredData] = useState<FilteredData>(data)
 
-  const handleDataFilter = (data: any) => {
-
+  const handleFiltering = (data: any) => {
+    
   }
 
   return (
-    <div style={style}>
+    <div>
       <Form filters={filters} />
     </div>
   )
