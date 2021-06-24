@@ -24,7 +24,8 @@ export default function Home() {
       'all'
     ],
     tags: [
-      'Next.js'
+      'Next.js',
+      'HTML'
     ]
   }
 
@@ -39,7 +40,7 @@ export default function Home() {
     }
   ]
 
-  const handleFilteredData = () => {
+  const handleApplyContentFilter = () => {
 
   }
 
@@ -62,7 +63,7 @@ export default function Home() {
       >
         <p>Front-End Developer</p>
       </Card>
-      <ContentFilter filters={filters} data={data} handleFilteredData={handleFilteredData} />
+      <ContentFilter filters={filters} data={data} handleApplyContentFilter={handleApplyContentFilter} />
      </PageContent>
    </Layout>
   )

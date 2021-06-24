@@ -3,7 +3,7 @@ export default {
     text: 'black',
     background: 'white',
     primary: 'hsl(350, 100%, 90%)',
-    secondary: 'hsl(0, 0%, 5%)',
+    secondary: 'hsl(0, 0%, 8%)',
     muted: 'hsl(0, 0%, 97%)'
   },
   fonts: {
