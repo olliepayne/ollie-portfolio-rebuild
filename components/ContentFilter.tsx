@@ -8,21 +8,17 @@
   - Theme UI (sx prop for styling)
 
   To Use
-  - Use the 'handleFiltering' prop to pass the data back up to the respective page.
+  - Use the 'handleApplyContentFilter' prop to pass the data back up to the respective page.
 */
 
 /** @jsxImportSource theme-ui */
 import React, { useState, useEffect } from 'react'
 
-type SearchProps = { data: any, handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void }
-const Search = ({ data, handleChange }: SearchProps) => {
+type SearchProps = { data: any, handleApplyResult: (result: string) => void }
+const Search = ({ data, handleApplyResult }: SearchProps) => {
   const [inputData, setInputData] = useState<string>('')
 
   const [results, setResults] = useState<string[]>([])
-
-  const fillInput = () => {
-
-  }
 
   const handleResultFiltering = () => {
     const isValidResult = (result: string) => {
@@ -49,25 +45,45 @@ const Search = ({ data, handleChange }: SearchProps) => {
   useEffect(handleResultFiltering, [inputData])
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('test')
-
     const searchQuery = e.target.value
     setInputData(searchQuery)
-
-    handleChange(e)
   }
 
   return (
-    <div>
-      <input name="tag" autoComplete="off" onChange={handleSearch} />
-      <div>
+    <div
+      sx={{
+        width: '150px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center' 
+      }}>
+      <input
+        sx={{
+          width: '100%'
+        }}
+        name="tag"
+        placeholder="Search tag..."
+        autoComplete="off" 
+        onChange={handleSearch} />
+      <div
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          backgroundColor: 'yellow'
+        }}>
         {results.map((result: string) => (
           <div 
             sx={{
-              width: '100px',
-              backgroundColor: 'cornflowerblue'
+              width: '100%',
+              backgroundColor: 'cornflowerblue',
+              ':hover': {
+                cursor: 'pointer'
+              }
             }}
-            key={'search:' + result}>
+            key={'search:' + result}
+            onClick={() => handleApplyResult(result)}>
             <p>{result}</p>
           </div>
         ))}
@@ -89,39 +105,25 @@ const Form = ({ filters, handleApplyForm }: FormProps) => {
     setFormData(newData)
   }
 
-  const handleApplySearch = (data: any) => {
-
+  const handleApplyResult = (data: any) => {
+    
   }
 
-  const handleTagFiltering = () => {
-
-  }
-  useEffect(handleTagFiltering, [filteredTags])
-
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    // handleApplyForm(formData)
+  const handleApplyCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newData = Object.assign({}, formData)
+    newData[e.target.name] = e.target.value
+    setFormData(newData)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <label>Category:</label>
-      <select name="category" onChange={handleChange}>
+      <select name="category" onChange={handleApplyCategory}>
         {filters.categories.map((category: string) => (
           <option key={'form:' + category} value={category}>{category}</option>
         ))}
       </select>
-      <label>Tags:</label>
-      <Search data={filters.tags} handleChange={handleChange} />
-      <button
-        sx={{
-          ':hover': {
-            cursor: 'pointer'
-          }
-        }}>
-        Apply
-      </button>
+      <Search data={filters.tags} handleApplyResult={handleApplyResult} />
     </form>
   )
 }

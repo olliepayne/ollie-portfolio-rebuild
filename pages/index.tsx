@@ -21,11 +21,16 @@ const AboutMeCard = () => {
 export default function Home() {
   const filters = {
     categories: [
-      'all'
+      'all',
+      'support'
     ],
     tags: [
       'Next.js',
-      'HTML'
+      'HTML',
+      'Strapi.js',
+      'TypeScript',
+      'fruit 1',
+      'fruit 2'
     ]
   }
 
