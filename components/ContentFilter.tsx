@@ -59,7 +59,16 @@ const Search = ({ data, handleApplyResult }: SearchProps) => {
       }}>
       <input
         sx={{
-          width: '100%'
+          width: '100%',
+          height: '2rem',
+          borderRadius: '0',
+          border: '2px solid hsl(0, 0%, 70%)',
+          transition: 'all 0.2s',
+          ':focus': {
+            outline: 'none',
+            borderColor: 'hsl(0, 0%, 85%)',
+            transition: 'all 0.2s'
+          }
         }}
         name="tag"
         placeholder="Search tag..."
@@ -68,6 +77,8 @@ const Search = ({ data, handleApplyResult }: SearchProps) => {
       <div
         sx={{
           width: '100%',
+          maxHeight: '200px',
+          overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
@@ -77,6 +88,7 @@ const Search = ({ data, handleApplyResult }: SearchProps) => {
           <div 
             sx={{
               width: '100%',
+              height: '40px',
               backgroundColor: 'cornflowerblue',
               ':hover': {
                 cursor: 'pointer'

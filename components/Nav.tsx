@@ -45,7 +45,8 @@ const NavHeader = () => {
       }}
     >
       <h1 
-        sx={{ 
+        sx={{
+          fontFamily: 'body',
           fontSize: '2rem', 
           color: 'white' 
         }}>

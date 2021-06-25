@@ -29,8 +29,12 @@ export default function Home() {
       'HTML',
       'Strapi.js',
       'TypeScript',
-      'fruit 1',
-      'fruit 2'
+      'fruit',
+      'fruit',
+      'fruit',
+      'fruit',
+      'fruit',
+      'fruit',
     ]
   }
 
