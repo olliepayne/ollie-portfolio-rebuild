@@ -3,11 +3,11 @@ export default {
     text: 'black',
     background: 'white',
     primary: 'hsl(350, 100%, 90%)',
-    secondary: 'hsl(0, 0%, 8%)',
+    secondary: 'hsl(0, 0%, 12%)',
     muted: 'hsl(0, 0%, 97%)'
   },
   fonts: {
-    body: 'Roboto'
+    body: '"Roboto"'
   },
   fontWeights: {
     body: 400,

@@ -1,5 +1,37 @@
 /** @jsxImportSource theme-ui */
+import { useState } from 'react'
 import Link from 'next/link'
+
+type NavToggleProps = { handleNavToggle: Function }
+const NavToggle = ({ handleNavToggle }: NavToggleProps) => {
+  return (
+    <div
+      sx={{
+        width: '30px',
+        display: ['none', 'block']
+      }}>
+      <label
+        sx={{
+          margin: '0 auto',
+          fontSize: '30px',
+          color: 'white',
+          ':hover': {
+            cursor: 'pointer'
+          }
+        }}
+        htmlFor="toggle">
+        &#9776;
+        onClick={handleNavToggle}
+      </label>
+      <input
+        sx={{
+          display: 'none'
+        }}
+        id="toggle"
+        type="checkbox" />
+    </div>
+  )
+}
 
 type NavLinkProps = { url: string, text: string }
 const NavLink = ({ url, text }: NavLinkProps) => {
@@ -14,7 +46,7 @@ const NavLink = ({ url, text }: NavLinkProps) => {
       <Link href={url}>
         <a
           sx={{
-
+            color: 'white'
           }}>
           {text}
         </a>
@@ -23,13 +55,14 @@ const NavLink = ({ url, text }: NavLinkProps) => {
   )
 }
 
-const NavLinkList = () => {
+type NavLinkListProps = { isMobile: boolean }
+const NavLinkList = ({ isMobile }: NavLinkListProps) => {
   return (
     <div
       sx={{
-        display: 'flex',
+        display: isMobile ? 'flex': ['flex', 'none'],
         justifyContent: 'space-around',
-        alignItems: 'center'
+        alignItems: 'center',
       }}>
       <NavLink url="/portfolio" text="Portfolio" />
       <NavLink url="/contact" text="Contact" />
@@ -44,11 +77,11 @@ const NavHeader = () => {
         textAlign: 'center',
       }}
     >
-      <h1 
+      <h1
         sx={{
           fontFamily: 'body',
-          fontSize: '2rem', 
-          color: 'white' 
+          fontSize: '2rem',
+          color: 'white'
         }}>
         Ollie Payne
       </h1>
@@ -57,6 +90,14 @@ const NavHeader = () => {
 }
 
 const Nav = () => {
+  const [isMobile, setIsMobile] = useState<boolean>()
+  const [isToggled, setIsToggled] = useState<boolean>(false)
+
+  const handleNavToggle = () => {
+    setIsToggled(!isToggled)
+    setIsMobile(!isMobile)
+  }
+
   return (
     <nav
       sx={{
@@ -65,11 +106,13 @@ const Nav = () => {
         inset: '0',
         display: 'flex',
         justifyContent: 'space-around',
+        alignItems: 'center',
         backgroundColor: 'secondary',
         boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)'
       }}>
       <NavHeader />
-      <NavLinkList />
+      <NavLinkList isMobile={isMobile} />
+      <NavToggle handleNavToggle={handleNavToggle} />
     </nav>
   )
 }
