@@ -1,9 +1,12 @@
 /** @jsxImportSource theme-ui */
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
-type NavToggleProps = { handleNavToggle: Function }
-const NavToggle = ({ handleNavToggle }: NavToggleProps) => {
+const NavToggle = ({ navRef }) => {
+  const handleNavToggle = () => {
+    navRef.current.style.height = navRef.current.style.height === '160px' ? '80px' : '160px'
+  }
+
   return (
     <div
       sx={{
@@ -21,14 +24,14 @@ const NavToggle = ({ handleNavToggle }: NavToggleProps) => {
         }}
         htmlFor="toggle">
         &#9776;
-        onClick={handleNavToggle}
       </label>
       <input
         sx={{
           display: 'none'
         }}
         id="toggle"
-        type="checkbox" />
+        type="checkbox"
+        onChange={handleNavToggle} />
     </div>
   )
 }
@@ -56,11 +59,12 @@ const NavLink = ({ url, text }: NavLinkProps) => {
 }
 
 type NavLinkListProps = { isMobile: boolean }
-const NavLinkList = ({ isMobile }: NavLinkListProps) => {
+const NavLinkList = () => {
   return (
     <div
       sx={{
-        display: isMobile ? 'flex': ['flex', 'none'],
+        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
       }}>
@@ -74,7 +78,7 @@ const NavHeader = () => {
   return (
     <div
       sx={{
-        textAlign: 'center',
+        textAlign: 'center'
       }}
     >
       <h1
@@ -90,29 +94,25 @@ const NavHeader = () => {
 }
 
 const Nav = () => {
-  const [isMobile, setIsMobile] = useState<boolean>()
-  const [isToggled, setIsToggled] = useState<boolean>(false)
-
-  const handleNavToggle = () => {
-    setIsToggled(!isToggled)
-    setIsMobile(!isMobile)
-  }
+  const navRef = useRef(null)
 
   return (
     <nav
       sx={{
-        maxHeight: '80px',
+        height: ['80px'],
+        overflow: 'hidden',
         position: 'fixed',
         inset: '0',
         display: 'flex',
         justifyContent: 'space-around',
-        alignItems: 'center',
         backgroundColor: 'secondary',
-        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)'
-      }}>
+        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
+        transition: 'height 0.3s',
+      }}
+      ref={navRef}>
       <NavHeader />
-      <NavLinkList isMobile={isMobile} />
-      <NavToggle handleNavToggle={handleNavToggle} />
+      <NavLinkList />
+      <NavToggle navRef={navRef} />
     </nav>
   )
 }

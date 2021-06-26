@@ -62,7 +62,7 @@ const Search = ({ data, handleApplyResult }: SearchProps) => {
           width: '100%',
           height: '2rem',
           borderRadius: '0',
-          border: '2px solid hsl(0, 0%, 70%)',
+          border: '2px solid hsl(0, 0%, 60%)',
           transition: 'all 0.2s',
           ':focus': {
             outline: 'none',
