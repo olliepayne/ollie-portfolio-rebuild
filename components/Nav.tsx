@@ -4,7 +4,13 @@ import Link from 'next/link'
 
 const NavToggle = ({ navRef }) => {
   const handleNavToggle = () => {
-    navRef.current.style.height = navRef.current.style.height === '160px' ? '80px' : '160px'
+    if (navRef.current) {
+      if (navRef.current.style.height === '160px') {
+        navRef.current.style.height = '80px'
+      } else {
+        navRef.current.style.height = '160px'
+      }
+    }
   }
 
   return (
@@ -96,23 +102,38 @@ const NavHeader = () => {
 const Nav = () => {
   const navRef = useRef(null)
 
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (navRef.current && window.screen.width > 400) navRef.current.style.height = '80px'
+    })
+  }, [])
+
   return (
     <nav
       sx={{
-        height: ['80px'],
+        height: '80px',
         overflow: 'hidden',
         position: 'fixed',
         inset: '0',
         display: 'flex',
-        justifyContent: 'space-around',
+        alignItems: 'flex-start',
         backgroundColor: 'secondary',
         boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
-        transition: 'height 0.3s',
+        transition: 'height 0.3s'
       }}
       ref={navRef}>
-      <NavHeader />
-      <NavLinkList />
-      <NavToggle navRef={navRef} />
+      <div
+        sx={{
+          width: '100%',
+          maxHeight: '80px',
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        }}>
+        <NavHeader />
+        <NavLinkList />
+        <NavToggle navRef={navRef} />
+      </div>
     </nav>
   )
 }
