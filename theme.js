@@ -7,7 +7,7 @@ export default {
     muted: 'hsl(0, 0%, 97%)'
   },
   fonts: {
-    body: '"Roboto"'
+    body: 'Roboto Mono, sans-serif'
   },
   fontWeights: {
     body: 400,

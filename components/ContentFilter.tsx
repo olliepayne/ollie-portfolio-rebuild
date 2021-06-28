@@ -5,7 +5,8 @@
 
   Dependencies
   - TypeScript (.tsx file extension)
-  - Theme UI (sx prop for styling)
+  - Theme UI (sx prop + theme.js file for styling)
+    * fontFamily: 'body', color: 'primary', color: 'secondary' -- will refer to the theme.js file
 
   To Use
   - Use the 'handleApplyContentFilter' prop to pass the data back up to the respective page.
@@ -55,13 +56,14 @@ const Search = ({ data, handleApplyResult }: SearchProps) => {
         width: '150px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center' 
+        alignItems: 'center'
       }}>
       <input
         sx={{
           width: '100%',
           height: '2rem',
-          borderRadius: '0',
+          fontFamily: 'body',
+          borderRadius: '5px',
           border: '2px solid hsl(0, 0%, 60%)',
           transition: 'all 0.2s',
           ':focus': {
@@ -150,7 +152,10 @@ const ContentFilter = ({ filters, data, handleApplyContentFilter }: ContentFilte
   }
 
   return (
-    <div>
+    <div
+      sx={{
+        fontFamily: 'body'
+      }}>
       <Form filters={filters} handleApplyForm={handleApplyForm} />
     </div>
   )

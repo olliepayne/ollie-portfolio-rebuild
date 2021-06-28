@@ -4,13 +4,7 @@ import Link from 'next/link'
 
 const NavToggle = ({ navRef }) => {
   const handleNavToggle = () => {
-    if (navRef.current) {
-      if (navRef.current.style.height === '160px') {
-        navRef.current.style.height = '80px'
-      } else {
-        navRef.current.style.height = '160px'
-      }
-    }
+    
   }
 
   return (
@@ -50,12 +44,31 @@ const NavLink = ({ url, text }: NavLinkProps) => {
         height: '45%',
         padding: '0.5em',
         margin: '0 1em',
-        ':hover': { cursor: 'pointer', backgroundColor: 'lightgray' }
+        ':hover': { 
+          cursor: 'pointer',
+        }
       }}>
       <Link href={url}>
         <a
           sx={{
-            color: 'white'
+            position: 'relative',
+            color: 'white',
+            fontFamily: 'body',
+            fontSize: '1rem',
+            '::before': {
+              content: '""',
+              width: '100%',
+              height: '2px',
+              position: 'absolute',
+              bottom: '0',
+              left: '0',
+              backgroundColor: 'primary',
+              transform: 'scaleX(0)',
+              transition: 'all 0.3s ease-in-out 0s'
+            },
+            ':hover::before': {
+              transform: 'scaleX(1)'
+            }
           }}>
           {text}
         </a>
