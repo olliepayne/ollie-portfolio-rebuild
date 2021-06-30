@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import PageContent from '../components/PageContent'
 import Card from '../components/Card'
 import ContentFilter from '../components/ContentFilter'
+import Button from '../components/Button'
 
 export default function Home() {
   const filters = {
@@ -42,9 +43,7 @@ export default function Home() {
   return (
    <Layout title="Ollie Payne - Home">
      <PageContent>
-      <Card width='clamp(200px, 50vw, 400px)' height="200px">
-        <p>Front-End Developer</p>
-      </Card>
+      <Button width="100px" height="40px">Try Me</Button>
       <ContentFilter filters={filters} data={data} handleApplyContentFilter={handleApplyContentFilter} />
      </PageContent>
    </Layout>

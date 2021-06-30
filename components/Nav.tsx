@@ -2,40 +2,6 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
-const NavToggle = ({ navRef }) => {
-  const handleNavToggle = () => {
-    
-  }
-
-  return (
-    <div
-      sx={{
-        width: '30px',
-        display: ['none', 'block']
-      }}>
-      <label
-        sx={{
-          margin: '0 auto',
-          fontSize: '30px',
-          color: 'white',
-          ':hover': {
-            cursor: 'pointer'
-          }
-        }}
-        htmlFor="toggle">
-        &#9776;
-      </label>
-      <input
-        sx={{
-          display: 'none'
-        }}
-        id="toggle"
-        type="checkbox"
-        onChange={handleNavToggle} />
-    </div>
-  )
-}
-
 type NavLinkProps = { url: string, text: string }
 const NavLink = ({ url, text }: NavLinkProps) => {
   return (
@@ -52,9 +18,9 @@ const NavLink = ({ url, text }: NavLinkProps) => {
         <a
           sx={{
             position: 'relative',
-            color: 'white',
+            color: 'secondary',
             fontFamily: 'body',
-            fontSize: '1rem',
+            fontSize: '1.25rem',
             '::before': {
               content: '""',
               width: '100%',
@@ -100,14 +66,19 @@ const NavHeader = () => {
         textAlign: 'center'
       }}
     >
-      <h1
-        sx={{
-          fontFamily: 'body',
-          fontSize: '2rem',
-          color: 'white'
-        }}>
-        Ollie Payne
-      </h1>
+      <Link href="/">
+        <h1
+          sx={{
+            fontFamily: 'body',
+            fontSize: '2rem',
+            color: 'secondary',
+            ':hover': {
+              cursor: 'pointer'
+            }
+          }}>
+          Ollie Payne
+        </h1>
+      </Link>
     </div>
   )
 }
@@ -116,37 +87,33 @@ const Nav = () => {
   const navRef = useRef(null)
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      if (navRef.current && window.screen.width > 400) navRef.current.style.height = '80px'
+    window.addEventListener('scroll', () => {
+      if (navRef.current) {
+        if (window.scrollY > 0) {
+          navRef.current.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)'
+        } else {
+          navRef.current.style.boxShadow = 'none'
+        }
+      }
     })
   }, [])
 
   return (
     <nav
       sx={{
-        height: '80px',
-        overflow: 'hidden',
+        maxHeight: '80px',
         position: 'fixed',
         inset: '0',
         display: 'flex',
-        alignItems: 'flex-start',
-        backgroundColor: 'secondary',
-        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
-        transition: 'height 0.3s'
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        transition: 'all 0.1s ease-in'
       }}
-      ref={navRef}>
-      <div
-        sx={{
-          width: '100%',
-          maxHeight: '80px',
-          display: 'flex',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-        }}>
-        <NavHeader />
-        <NavLinkList />
-        <NavToggle navRef={navRef} />
-      </div>
+      ref={navRef}
+    >
+      <NavHeader />
+      <NavLinkList />
     </nav>
   )
 }

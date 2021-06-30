@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'theme-ui'
-import theme from '../theme'
-// import Layout from '../components/Layout'
+import theme from '../utils/theme'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -6,7 +6,8 @@ const PageContent = ({ children, style }: PageContentProps) => {
   let defaultStyle = {
     minHeight: '100vh',
     marginTop: '80px',
-    flex: '1 auto'
+    flex: '1 auto',
+    backgroundColor: 'white'
   }
   
   defaultStyle = useMergeStyle(defaultStyle, style)

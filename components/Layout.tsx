@@ -11,6 +11,8 @@ const Layout = ({ children, title }: LayoutProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
       </Head>
       <Nav />
       {children}

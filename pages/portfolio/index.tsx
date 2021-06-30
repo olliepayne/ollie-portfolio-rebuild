@@ -1,8 +1,13 @@
+import Layout from '../../components/Layout'
+import PageContent from '../../components/PageContent'
+
 const Portfolio = () => {
   return (
-    <div>
-      
-    </div>
+    <Layout title="Ollie Payne - Portfolio">
+      <PageContent>
+        
+      </PageContent>
+    </Layout>
   )
 }
 
